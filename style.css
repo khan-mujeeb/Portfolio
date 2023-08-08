@@ -14,6 +14,7 @@
 }
 
 * {
+    user-select: none;
     margin: 0;
     background-color: var(--primary-color);
     padding: 0;
@@ -74,7 +75,8 @@ a {
     text-decoration: none;
 }
 
-.nav-items div :hover {
+.nav-items div :hover,
+.skill:hover {
     transition: 0.6s;
     font-weight: bold;
     color: #5e60ce;
@@ -140,7 +142,6 @@ a {
     padding: 15px 20px;
     font-size: 1rem;
     color: whitesmoke;
-    
 }
 
 .btn a {
@@ -165,22 +166,33 @@ a {
 .social-contaier {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
+.social {
+    font-family: "Poppins", sans-serif;
+    gap: 10px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .social-icon {
-    
     height: 60px;
 }
 
 .email-container {
     gap: 1rem;
+    user-select: contain;
     font-size: 1.5rem;
     align-items: center;
     display: flex;
 }
 
-.social-icon:hover {
+.social-icon:hover,
+.social:hover {
+    font-weight: bold;
     transition: 0.5s;
     transform: scale(1.1);
     box-shadow: 6px rgba(0, 0, 0, 0.3);
@@ -198,6 +210,7 @@ a {
 }
 
 .skills-section {
+    margin-top: -50px;
     display: flex;
     gap: 1.5rem;
     flex-direction: column;
@@ -205,9 +218,11 @@ a {
     justify-content: center;
 }
 
-
-
-.skill-heading, .education-heading, .certfication-heading, .project-section-heading {
+.skill-heading,
+.education-heading,
+.certfication-heading,
+.project-section-heading,
+.blog-heading {
     font-size: 2.5rem;
     color: var(--text-color);
     display: flex;
@@ -263,13 +278,12 @@ a {
     flex-direction: column;
 }
 
-
 .clg {
     max-width: 30%;
     gap: 0.7rem;
     display: flex;
     flex-direction: column;
-    
+
     border-top: 2px dashed;
     border-color: var(--text-color);
     margin: 0;
@@ -287,7 +301,6 @@ a {
     align-items: center;
     display: flex;
     gap: 1rem;
-    
 }
 
 .clg:nth-child(even)::before {
@@ -347,12 +360,10 @@ a {
     border-bottom-left-radius: 0;
 }
 
-
 .certification-section {
     gap: 50px;
     display: flex;
     flex-direction: column;
-
 }
 
 .certification-slide-show {
@@ -361,7 +372,6 @@ a {
     display: flex;
     gap: 3rem;
     flex-direction: row;
-
 }
 
 .certification-slide {
@@ -369,8 +379,12 @@ a {
     display: flex;
 }
 
+.certification-slide :hover {
+    cursor: pointer;
+}
+
 .certification-slide img {
-    width: 30%;
+    width: 45%;
     height: 230px;
     border-radius: 10px;
 }
@@ -381,15 +395,11 @@ a {
     flex-direction: column;
 }
 
-
 .project-section {
     display: flex;
     gap: 50px;
     flex-direction: column;
 }
-
-
-
 
 .project-container {
     padding: 50px;
@@ -401,7 +411,6 @@ a {
     align-items: center;
 }
 
-
 .project-link {
     color: var(--text-color);
 
@@ -410,25 +419,21 @@ a {
     font-size: 18px; /* Adjust as needed */
 }
 
-
 .project-heading {
     font-size: 1.5rem;
 }
-
 
 .project-skills {
     display: flex;
     gap: 1rem;
 }
 
-
-
 .end-section {
     margin-top: 200px;
     gap: 1rem;
     padding: 70px;
     color: whitesmoke;
-    background:#5e60ce;
+    background: #5e60ce;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -436,11 +441,9 @@ a {
 }
 
 .end-section h4 {
-    
     color: whitesmoke;
     background-color: transparent;
     font-size: 2rem;
-    
 }
 .end-section h6 {
     color: whitesmoke;
@@ -456,4 +459,85 @@ a {
     font-size: 0.8rem;
 }
 
+.blog-section {
+    display: flex;
+    flex-direction: column;
+}
 
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+.hero {
+  background-color: #0040C1;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hero__title {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  z-index: 1;
+}
+
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px darken(#0040C1, 8%);
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite;
+  
+  &:nth-child(2n) {
+    border-color: lighten(#0040C1, 10%);
+  }
+  
+  &:nth-child(2) {
+    animation-delay: 2s;
+    left: 25vw;
+    top: 40vh;
+  }
+  
+  &:nth-child(3) {
+    animation-delay: 4s;
+    left: 75vw;
+    top: 50vh;
+  }
+  
+  &:nth-child(4) {
+    animation-delay: 6s;
+    left: 90vw;
+    top: 10vh;
+  }
+  
+  &:nth-child(5) {
+    animation-delay: 8s;
+    left: 10vw;
+    top: 85vh;
+  }
+  
+  &:nth-child(6) {
+    animation-delay: 10s;
+    left: 50vw;
+    top: 10vh;
+  }
+}
+
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);   
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%); 
+    opacity: 0;
+  }
+}
