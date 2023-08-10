@@ -31,7 +31,8 @@
     overflow-y: auto;
 }
 
-.container {
+.container{
+    overflow: hidden;
     gap: 200px;
     display: flex;
     flex-direction: column;
@@ -93,21 +94,21 @@ a {
 }
 
 .hero-section {
-    height: 100vh;
+    
     /* padding-left: 10%;
     padding-right: 10%; */
-    position: relative;
     display: flex;
+    flex-wrap: wrap-reverse;
     justify-content: space-between;
     align-items: center;
-    margin: 0 1rem;
+    margin: 15% 1rem;
 }
 
 .hero-section-left {
+    flex: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     gap: 2rem;
 }
 
@@ -178,6 +179,8 @@ a {
     justify-content: center;
     align-items: center;
 }
+
+
 .social-icon {
     height: 60px;
 }
@@ -191,13 +194,14 @@ a {
 }
 
 .social-icon:hover,
-.social:hover {
+.social:hover, .skill:hover {
     font-weight: bold;
     transition: 0.5s;
     transform: scale(1.1);
     box-shadow: 6px rgba(0, 0, 0, 0.3);
 }
 .hero-section-right {
+    margin: 10% 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -210,7 +214,7 @@ a {
 }
 
 .skills-section {
-    margin-top: -50px;
+    margin-top: -150px;
     display: flex;
     gap: 1.5rem;
     flex-direction: column;
@@ -252,6 +256,7 @@ a {
     font-weight: 500;
 }
 .skills {
+    flex-wrap: wrap;
     gap: 2rem;
     display: flex;
     justify-content: center;
@@ -259,6 +264,7 @@ a {
 }
 
 .skill {
+    flex-wrap: wrap;
     font-family: "Poppins", sans-serif;
     gap: 10px;
     display: flex;
@@ -395,12 +401,19 @@ a {
     flex-direction: column;
 }
 
+
+
+
 .project-section {
     display: flex;
     gap: 50px;
     flex-direction: column;
 }
 
+.project-video {
+    width: 60%;
+    height: 350px;
+}
 .project-container {
     padding: 50px;
     box-shadow: 0 1px 3px var(--text-color), 0 1px 2px var(--text-color);
@@ -413,21 +426,39 @@ a {
 
 .project-link {
     color: var(--text-color);
-
     display: inline-block;
     padding-left: 20px; /* Adjust as needed */
     font-size: 18px; /* Adjust as needed */
 }
 
+.project-link:hover {
+    font-weight: bold;
+}
+
 .project-heading {
+    color: #22577a;
     font-size: 1.5rem;
 }
 
 .project-skills {
+    
+    flex-wrap: wrap;
     display: flex;
     gap: 1rem;
 }
 
+.project-skills p {
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.project-skills p:hover {
+    
+    background-color: #5e60ce;
+    color: white;
+    font-weight: bold;
+    transition: 0.5s;
+}
 .end-section {
     margin-top: 200px;
     gap: 1rem;
@@ -464,80 +495,3 @@ a {
     flex-direction: column;
 }
 
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
-
-.hero {
-  background-color: #0040C1;
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.hero__title {
-  color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 50px;
-  z-index: 1;
-}
-
-.cube {
-  position: absolute;
-  top: 80vh;
-  left: 45vw;
-  width: 10px;
-  height: 10px;
-  border: solid 1px darken(#0040C1, 8%);
-  transform-origin: top left;
-  transform: scale(0) rotate(0deg) translate(-50%, -50%);
-  animation: cube 12s ease-in forwards infinite;
-  
-  &:nth-child(2n) {
-    border-color: lighten(#0040C1, 10%);
-  }
-  
-  &:nth-child(2) {
-    animation-delay: 2s;
-    left: 25vw;
-    top: 40vh;
-  }
-  
-  &:nth-child(3) {
-    animation-delay: 4s;
-    left: 75vw;
-    top: 50vh;
-  }
-  
-  &:nth-child(4) {
-    animation-delay: 6s;
-    left: 90vw;
-    top: 10vh;
-  }
-  
-  &:nth-child(5) {
-    animation-delay: 8s;
-    left: 10vw;
-    top: 85vh;
-  }
-  
-  &:nth-child(6) {
-    animation-delay: 10s;
-    left: 50vw;
-    top: 10vh;
-  }
-}
-
-@keyframes cube {
-  from {
-    transform: scale(0) rotate(0deg) translate(-50%, -50%);   
-    opacity: 1;
-  }
-  to {
-    transform: scale(20) rotate(960deg) translate(-50%, -50%); 
-    opacity: 0;
-  }
-}
